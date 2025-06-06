@@ -27,11 +27,11 @@ Este projeto simula a análise de desempenho de uma corretora de investimentos a
 
 ```
 📂 projeto-corretora
+
 ├── README.md
 ├── Clientes.csv
 ├── Funcionarios.csv
 ├── Investimentos.csv
-├── SQL
 
 ```
 ⚠️ As tabelas dos Clientes.csv, Funcionarios.csv e Investimentos.csv foram criados no MySQL e as informações fictícias geradas pela IA. 
