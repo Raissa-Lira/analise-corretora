@@ -70,8 +70,8 @@ Este projeto simula a análise de desempenho de uma corretora de investimentos a
 
 ## 📁 Como usar este projeto
 
-1. Acesse a pasta `dados/` para visualizar os arquivos CSV usados na análise.
-2. Confira o arquivo `SQLscript_tabelas_e_consultas.sql` com a criação do banco e as análises realizadas em SQL.
+1. Acesse as pastas para visualizar os arquivos CSV usados na análise.
+2. Confira o arquivo SQL com a criação do banco e as análises realizadas em SQL.
 3. Visualize o painel interativo publicado no Tableau para acompanhar os insights.
 
 ---
