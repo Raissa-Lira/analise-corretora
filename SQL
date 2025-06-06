@@ -1,0 +1,197 @@
+         CONSULTAS SQL DO PROJETO: CORRETORA DE INVESTIMENTOS  
+
+ Este projeto utilizou dados fictícios gerados com o auxílio da inteligência artificial (ChatGPT), demonstrando o uso da IA para automação na construção de datasets sintéticos e realistas para análise. 
+
+Banco de dados 
+
+CREATE DATABASE IF NOT EXISTS corretora_investimentos; 
+
+Tabela Clientes 
+
+ CREATE TABLE clientes ( id_cliente INT PRIMARY KEY AUTO_INCREMENT, nome VARCHAR(100), cpf VARCHAR(14), data_inicio DATE ); 
+
+Tabela Funcionários  
+
+CREATE TABLE funcionarios ( id_funcionario INT PRIMARY KEY AUTO_INCREMENT, nome VARCHAR(100) ); 
+
+Tabela Investimentos  
+
+CREATE TABLE investimentos ( id_investimento INT PRIMARY KEY AUTO_INCREMENT, tipo VARCHAR(50), valor_aplicado DECIMAL(10,2), lucro_gerado DECIMAL(10,2), id_cliente INT, id_funcionario INT, data_aplicacao DATE, FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente), FOREIGN KEY (id_funcionario) REFERENCES funcionarios(id_funcionario) ); 
+
+Inserir dados na tabela de funcionários 
+
+INSERT INTO funcionarios (nome) VALUES 
+
+('Ana Paula Martins'), 
+
+('Carlos Henrique Lima'), 
+
+('Fernanda Souza'), 
+
+('João Pedro Alves'), 
+
+('Mariana Castro'), 
+
+('Rafael Dias'), 
+
+('Letícia Monteiro'), 
+
+('Vinícius Rocha'), 
+
+('Bruna Oliveira'), 
+
+('Daniela Freitas'); 
+
+Inserir dados na tabela de clientes 
+
+INSERT INTO clientes (nome, cpf, data_inicio) VALUES 
+
+('Lucas Mendes', '123.456.789-01', '2024-01-15'), 
+
+('Juliana Costa', '234.567.890-12', '2024-02-20'), 
+
+('Roberta Lima', '345.678.901-23', '2024-03-05'), 
+
+('Eduardo Silva', '456.789.012-34', '2024-03-18'), 
+
+('Beatriz Souza', '567.890.123-45', '2024-04-10'), 
+
+('Paulo Teixeira', '678.901.234-56', '2024-05-01'), 
+
+('Camila Rocha', '789.012.345-67', '2024-05-25'), 
+
+('Marcos Vinícius', '890.123.456-78', '2024-06-12'), 
+
+('Natália Fernandes', '901.234.567-89', '2024-07-07'), 
+
+('Tiago Gomes', '012.345.678-90', '2024-08-21'), 
+
+('Renata Dias', '111.222.333-44', '2024-09-02'), 
+
+('Felipe Moraes', '222.333.444-55', '2024-09-19'), 
+
+('Sandra Pires', '333.444.555-66', '2024-10-05'), 
+
+('Rodrigo Nunes', '444.555.666-77', '2024-10-28'), 
+
+('Carla Martins', '555.666.777-88', '2024-11-11'), 
+
+('Ricardo Lopes', '666.777.888-99', '2024-11-30'), 
+
+('Viviane Brito', '777.888.999-00', '2024-12-05'), 
+
+('Gustavo Cunha', '888.999.000-11', '2024-12-10'), 
+
+('Lívia Ribeiro', '999.000.111-22', '2024-12-15'), 
+
+('Bruno Santana', '000.111.222-33', '2024-12-20'), 
+
+('Aline Marques', '101.202.303-44', '2024-01-08'), 
+
+('Diego Ferreira', '212.313.414-55', '2024-02-14'), 
+
+('Lorena Albuquerque', '323.424.535-66', '2024-03-20'), 
+
+('Bruno Lima', '434.535.646-77', '2024-04-03'), 
+
+('Tatiane Silva', '545.646.757-88', '2024-05-10'), 
+
+('Igor Nascimento', '656.757.868-99', '2024-06-17'), 
+
+('Helena Duarte', '767.868.979-00', '2024-07-04'), 
+
+('Fernando Matos', '878.979.080-11', '2024-08-12'), 
+
+('Isabela Reis', '989.080.191-22', '2024-09-30'), 
+
+('Leandro Pacheco', '090.191.202-33', '2024-10-25'); 
+
+Inserir dados na tabela de investimentos  
+
+INSERT INTO investimentos (tipo, valor_aplicado, lucro_gerado, id_cliente, id_funcionario, data_aplicacao) VALUES ('Renda Fixa', 5000.00, 450.00, 1, 1, '2024-01-20'), ('Ações', 8000.00, 1200.00, 2, 2, '2024-02-25'), ('Fundos Imobiliários', 3000.00, 270.00, 3, 3, '2024-03-10'), ('Ações', 7000.00, 950.00, 4, 1, '2024-03-22'), ('Renda Fixa', 10000.00, 900.00, 5, 4, '2024-04-15'), ('Criptoativos', 6000.00, 1500.00, 6, 5, '2024-05-03'), ('Fundos Imobiliários', 2000.00, 200.00, 7, 6, '2024-05-29'), ('Ações', 7500.00, 1000.00, 8, 2, '2024-06-18'), ('Renda Fixa', 5000.00, 450.00, 9, 7, '2024-07-10'), ('Criptoativos', 10000.00, 2500.00, 10, 8, '2024-08-25'), ('Fundos Imobiliários', 4500.00, 500.00, 11, 9, '2024-09-06'), ('Ações', 8000.00, 1100.00, 12, 10, '2024-09-20'), ('Renda Fixa', 3000.00, 270.00, 13, 3, '2024-10-08'), ('Ações', 7000.00, 890.00, 14, 4, '2024-10-30'), ('Criptoativos', 9000.00, 2100.00, 15, 5, '2024-11-13'), ('Renda Fixa', 4000.00, 360.00, 16, 6, '2024-12-01'), ('Fundos Imobiliários', 5500.00, 600.00, 17, 7, '2024-12-06'), ('Ações', 9000.00, 1150.00, 18, 8, '2024-12-12'), ('Criptoativos', 12000.00, 2900.00, 19, 9, '2024-12-18'), ('Renda Fixa', 6000.00, 500.00, 20, 10, '2024-12-22'), INSERT INTO investimentos (tipo, valor_aplicado, lucro_gerado, id_cliente, id_funcionario, data_aplicacao) VALUES ('Renda Fixa', 7000.00, 630.00, 21, 1, '2024-01-12'), ('Ações', 8500.00, 980.00, 22, 2, '2024-02-18'), ('Criptoativos', 9500.00, 2200.00, 23, 3, '2024-03-25'), ('Fundos Imobiliários', 4000.00, 420.00, 24, 4, '2024-04-06'), ('Renda Fixa', 3000.00, 250.00, 25, 5, '2024-05-12'), ('Ações', 10000.00, 1300.00, 26, 6, '2024-06-22'), ('Criptoativos', 11000.00, 2700.00, 27, 7, '2024-07-07'), ('Fundos Imobiliários', 6000.00, 660.00, 28, 8, '2024-08-15'), ('Renda Fixa', 8000.00, 700.00, 29, 9, '2024-09-30'), ('Ações', 9000.00, 1050.00, 30, 10, '2024-10-28'); 
+
+Tratar dados duplicados, nulos e datas inválidas 
+
+Remover registros duplicados. Clientes com CPF duplicado. 
+
+SELECT cpf, COUNT(*)  
+
+FROM clientes 
+
+GROUP BY cpf 
+
+HAVING COUNT(*) > 1; 
+
+Excluir duplicados (mantendo o menor id_cliente). 
+
+DELETE FROM clientes 
+
+WHERE id_cliente NOT IN ( 
+
+    SELECT MIN(id_cliente) 
+
+    FROM clientes 
+
+    GROUP BY cpf 
+
+); 
+
+Encontrar e tratar dados nulos. Verificar nulos na tabela clientes. 
+
+SELECT * FROM clientes 
+
+WHERE nome IS NULL OR cpf IS NULL OR data_inicio IS NULL; 
+
+Verificar nulos na tabela investimentos. 
+
+SELECT * FROM investimentos WHERE tipo IS NULL OR valor_aplicado IS NULL OR lucro_gerado IS NULL OR id_cliente IS NULL OR id_funcionario IS NULL OR data_aplicacao IS NULL; 
+
+Excluir ou corrigir (exemplo: excluir investimentos com campos críticos nulos). 
+
+DELETE FROM investimentos WHERE tipo IS NULL OR valor_aplicado IS NULL OR lucro_gerado IS NULL OR id_cliente IS NULL OR id_funcionario IS NULL OR data_aplicacao IS NULL; 
+
+Validar datas inválidas. Clientes com data_inicio fora de 2024. 
+
+SELECT * FROM clientes 
+
+WHERE YEAR(data_inicio) <> 2024; 
+
+Investimentos com data_aplicacao fora de 2024. 
+
+SELECT * FROM investimentos 
+
+WHERE YEAR(data_aplicacao) <> 2024; 
+
+Excluir aplicações fora de 2024 
+
+DELETE FROM investimentos 
+
+WHERE YEAR(data_aplicacao) <> 2024; 
+
+ 
+
+Consultas SQL para fazer análises 
+
+Total de lucro por tipo de investimento 
+
+SELECT tipo, SUM(lucro_gerado) AS total_lucro FROM investimentos GROUP BY tipo ORDER BY total_lucro DESC; 
+
+Total de lucro por funcionário 
+
+SELECT f.nome AS funcionario, SUM(i.lucro_gerado) AS total_lucro FROM investimentos i JOIN funcionarios f ON i.id_funcionario = f.id_funcionario GROUP BY f.nome ORDER BY total_lucro DESC; 
+
+Quantidade de clientes atendidos por funcionário 
+
+SELECT f.nome AS funcionario, COUNT(DISTINCT i.id_cliente) AS qtd_clientes FROM investimentos i JOIN funcionarios f ON i.id_funcionario = f.id_funcionario GROUP BY f.nome ORDER BY qtd_clientes DESC; 
+
+Lucro médio por cliente, por funcionário 
+
+SELECT f.nome AS funcionario, ROUND(SUM(i.lucro_gerado) / COUNT(DISTINCT i.id_cliente), 2) AS lucro_medio_por_cliente FROM investimentos i JOIN funcionarios f ON i.id_funcionario = f.id_funcionario GROUP BY f.nome ORDER BY lucro_medio_por_cliente DESC; 
+
+ 
+
+ 
+
+ 
+
+  
