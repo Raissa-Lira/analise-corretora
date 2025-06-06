@@ -35,7 +35,7 @@ Este projeto simula a análise de desempenho de uma corretora de investimentos a
 ├── SQL
 
 ```
-
+⚠️ Para visualizar em formato de tabela, abra em **Google Sheets**, **Excel** ou **Tableau**.
 ---
 
 ## 📈 Dashboard Interativo  
